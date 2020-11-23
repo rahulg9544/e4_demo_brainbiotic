@@ -33,6 +33,7 @@ class Cart extends MY_Controller
 
     //  print_r($decode);
     //  exit;
+    //  exit;
 
     $q = array('user_id' => $decode->id);
 
