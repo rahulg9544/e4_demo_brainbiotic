@@ -21,7 +21,7 @@ class Placeorder_model extends CI_Model
 
 	function get_delivery_charge($city_id)
 	{
-		$squery = "SELECT delivery_charge FROM city WHERE city_id=$city_id";
+		$squery = "SELECT delivery_charge FROM city WHERE city_id='$city_id'";
 		$query = $this->db->query($squery);
 		return $query->row();
 	}
