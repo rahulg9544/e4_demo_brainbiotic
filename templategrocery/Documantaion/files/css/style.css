@@ -1,0 +1,204 @@
+*{margin:0; padding:0;}
+a{color:#0052db}
+body{margin:0; padding:0; font-size:14px; font-family:'Open Sans', Helvetica, sans-serif; color:#555;line-height:24px;}
+img{border:0 none; margin:4px 0; max-width: 100%; }
+.right img{border:1px solid #EEE;}
+ul li{list-style-type:none;}
+h1, h2, h3, h4, h5, h6{font-weight:normal;font-family:'Play', Helvetica, sans-serif;font-weight:600;color:#072e69;}
+h1{font-size:23px; line-height:80px; height:80px; margin-bottom:10px;}
+h3 a, h2 a{text-decoration:none; color:#000;}
+a.top {
+	font-size: 0; 	
+	padding-top: 10px; 
+	background:url(../images/top.png) no-repeat scroll center transparent; 
+	white-space: nowrap; 
+	float: right; 
+	height:30px;
+	width:30px;
+}
+
+a.top:hover { color: #333333; }
+h2{
+	font-size:22px; 
+	color:#000; 	
+	padding-bottom:10px;
+	text-transform:uppercase;
+}
+h2.tips{ font-size:17px; }
+h3{font-size:16px; text-transform:uppercase;padding-bottom:10px;}
+
+p{line-height:24px;}
+.red{color:#072e69;}
+.clear{clear:both;}
+.bottom-space{ margin-bottom: 20px; }
+.content-block{
+	padding:15px;
+	border-style:solid;
+	border-color:#ddd;
+	border-width:2px 1px 1px;
+}
+.topbar{
+	height:80px;
+	position:fixed;
+	background:#444;
+	width:100%;
+	z-index:1;
+}
+.topbar-inner{
+	padding:0 20px;
+}
+.logo-title{color:#fff;}
+.sidebar{
+	background:#444;   
+    height: 100%;
+    left: 0;
+	top:80px;
+    min-height: 100%;
+    position: fixed;
+    width: 18%;
+    z-index: 100;
+	overflow:auto;
+}
+
+.right-content{	width:78%; float:left; margin-left:20%;}
+
+ul.menu{margin:0 0 40px 0px; padding:0;}
+ul.menu li a{  	
+	border-top: 1px solid #666;
+    color: #FFF;
+    display: block;
+    line-height: 32px;
+    padding: 0 0 0 15px;
+    text-align: left;
+    text-decoration: none;
+	font-weight:400;
+}
+ul.menu li a:hover{
+	background: #666;
+    color: #fff;
+	transition:500ms;
+	font-weight:bold;
+}
+ul.menu li a:selected{background:#fff; color:#3984ab;}
+
+.mb10{margin-bottom:10px;}
+
+ul.modual{margin:0 0 40px 40px; padding:0;}
+ul.modual li{line-height:28px; font-size:14px;}
+ul.modual li a{line-height:24px; text-decoration:underline; color:#00F; margin-left:8px}
+
+
+ul.sublinks li a {padding-left:30px;}
+ul.subsublinks li a {padding-left:50px;}
+.arrowimg {
+    background: url../images/arrow.gif) no-repeat scroll 0 6px transparent;
+    padding-left: 10px;
+	padding-bottom: 10px;
+}
+.subsubheader {font-size: 13px; font-style: normal; margin-left:30px;}
+em	{ font-size:13px;}
+.notice { margin-top:10px; }
+.note-msg, .notice-msg {
+    background-color: #FAFAEC;
+    border-color: #FCD344;
+    color: #3D6611;
+}
+.error-msg, .success-msg, .note-msg, .notice-msg {
+    border-style: solid !important;
+    border-width: 1px !important;
+    font-size: 13px !important;
+    padding: 4px 12px !important;
+}
+
+.top_bottom_line  { border-top:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;padding:8px 0; margin:10px 0 0 0; text-align:center; font-size:17px;}
+.buttons { margin: 10px 0;}
+.buttons a{
+	background-color: #46CBB0;
+    border-radius: 2px;
+    box-shadow: 1px 1px 0 #1D5749;
+    color: #FFFFFF;   
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms linear 0s;
+}
+.buttons a:hover{
+	background-color: #F06159;
+}
+.link.buttons a{
+	float: left;
+}
+.box.buttons a{
+	clear:both;
+	display: inline-block;
+}
+.fa{ margin-right: 10px;}
+.red{color: #072e69; font-weight: normal;  line-height: 20px;}
+.block1 {
+    float: left;
+    margin-right: 10px;
+    margin-top: -10px;
+    width: 28%;
+}
+.block2 {
+    float: right;
+    width: 70%;
+	font-size: 13px;
+	line-height:20px;
+	font-weight:normal;
+}
+.block2 strong{ margin-bottom: 5px;}
+.shortcodes .mb10 > strong{ letter-spacing: 1px;}
+h3.sub-head:after {
+    background: none repeat scroll 0 0 #000000;
+    bottom: 10px;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100px;
+}
+h3.sub-head {
+    color: #000000;
+    padding-bottom: 20px;
+    position: relative;
+}
+h2.sub-head {
+	border: medium none;
+    color: #4FBFA8;
+    display: inline-block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-bottom: 0;
+}
+
+h4 {
+    color: #555;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+h5 {
+    font-size: 16px;
+    padding-bottom: 0;
+}
+.image-block{
+	border:1px solid #d5d5d5;
+	width:80%;
+	height:auto;
+}
+@media (max-width: 979px) {
+
+.sidebar {
+    width: 35%;
+}
+
+.right-content {
+    margin-left: 40%;
+    width: 60%;
+}
+}
