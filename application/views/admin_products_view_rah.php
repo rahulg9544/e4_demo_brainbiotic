@@ -79,17 +79,17 @@
                       
                     <div class="form-group col-sm-6" >
                     <h4 class="demo-sub-title">Choose Product Attributes</h4>
-                      <select class="form-control" name="sizecolorchoice"  id="sizecolorchoice" onchange="checksizechoice();" >
+                      <!-- <select class="form-control" name="sizecolorchoice"  id="sizecolorchoice" onchange="checksizechoice();" >
                         <option value="1">Both Colour & Size</option>
                         <option value="0">Not Available</option>
                         <option value="2">Color Only</option>
                         <option value="3">Size Only</option>
+                      </select> -->
 
-                        <option value="4">Age Only</option>
-                        <option value="5">Size and Age</option>
-                        <option value="6">Color and age</option>
-                        
-                      </select>
+                      <input type="checkbox" value="1" class="mycheckbox"> Size
+                      <input type="checkbox" value="2" class="mycheckbox"> Age
+                      <input type="checkbox" value="3" class="mycheckbox"> Color
+
                      </div>  
 
 
@@ -308,9 +308,9 @@
 
 
                      
-                      <div class="form-group col-sm-2 size_div_multi">
+                      <div class="form-group col-sm-2 size_div_multisage">
                      <!--  <h4 class="demo-sub-title">Shoe Size</h4> -->
-                      <label class="demo-sub-title">Size</label>
+                      <label class="demo-sub-title">Age</label>
                       <select class="form-control " name="shoesize_nmp[]" id="shoesize_id0">
                         <option value="">Select</option>
                         <option value="18">18</option>
@@ -333,7 +333,7 @@
                      </div>
 
 
-                     <div class="form-group col-sm-2" id="sizess">
+                     <div class="form-group col-sm-2 size_div_multi">
           
                       <label class="demo-sub-title">Size Letter</label>
                       <select class="form-control " name="psizeltr_nmp[]" id="sizeltr_id0">
@@ -342,22 +342,6 @@
                         <option value="M">M</option>
                         <option value="L">L</option>
                         <option value="XL">XL</option>
-                        
-                        
-                                                
-                      </select>
-                      
-                     </div>
-
-                     <div class="form-group col-sm-2" style="display:none;" id="age">
-          
-                      <label class="demo-sub-title">Age</label>
-                      <select class="form-control " name="age[]" id="age_id0">
-                        
-                        <option value="S">0 to 6 </option>
-                        <option value="M">6 to 12</option>
-                        <option value="L">12 to 24</option>
-                        <option value="XL">24 to 36</option>
                         
                         
                                                 
@@ -723,11 +707,11 @@
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-storage.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
 
 
 
-<script src="<?php echo base_url(); ?>/AdminLTE-master/js/jquery-1.11.3.min.js"></script>
+<!-- <script src="<?php echo base_url(); ?>/AdminLTE-master/js/jquery-1.11.3.min.js"></script> -->
  <script src="<?php echo base_url(); ?>/AdminLTE-master/js/html5shiv.js"></script>
  <script src="<?php echo base_url(); ?>/AdminLTE-master/js/jquery-ui.js"></script>
  <script src="<?php echo base_url(); ?>/AdminLTE-master/js/modernizr-custom.js"></script>
@@ -741,6 +725,143 @@
  var j=0;
  var Colors="Colors";
  var Image="Image";
+
+ function addbox() {
+  if (document.getElementById('mychecked').checked) {
+        document.getElementById('area').style.display = 'block';
+    } else {
+        document.getElementById('area').style.display = 'none';
+    }
+}
+
+
+
+$("input.mycheckbox").click(function () {
+        // Loop all these checkboxes which are checked
+        // var tmp = [];
+        // var checked = $(this).val();
+        // tmp.push(checked);
+
+//    console.log(tmp);
+
+// return false;
+  //      $("input.mycheckbox:checked").each(function(){
+            a = $(this).val();
+
+           
+            // Use $(this).val() to get the Bike, Car etc.. value
+
+            var array = []; 
+        //    var sizecolorchoice = document.getElementById("sizecolorchoice").value;
+            
+         //alert(sizecolorchoice);
+//1 - size, 2 - age, 3 - color
+
+alert(a);
+
+         if(a==1)
+        {
+         // alert();
+         $('#size_div_multi').show();
+
+
+         $('.size_div_multisage').hide();
+          $('.color_div').hide();
+          $('.color_select').hide();
+
+          
+        }
+
+        else if(a==2)
+        {
+         // alert();
+         $('#size_div_multisage').show();
+         $('#size_div_multi').hide();
+         $('.color_div').hide();
+         $('.color_select').hide();
+
+          // $('.color_div').show();
+          // $('.color_select').show();
+          // $(".color_div").removeClass("col-sm-4");
+          // $(".color_div").addClass("col-sm-6");
+          // $(".imgcolors").removeClass("col-sm-4");
+          // $(".color_select").addClass("col-sm-6");
+          // $(".color_select").removeClass("col-sm-4");
+          // $(".imgcolors").addClass("col-sm-6");
+          // $('.size_div_single').hide();
+          // $('.size_div_multi').hide();
+        }
+
+        else if(a==3)
+        {
+         // alert();
+         $('#colrsizechoicediv').show();
+          $('.color_div').show();
+          $('.color_select').show();
+          $(".color_div").removeClass("col-sm-4");
+          $(".color_div").addClass("col-sm-6");
+          $(".imgcolors").removeClass("col-sm-4");
+          $(".color_select").addClass("col-sm-6");
+          $(".color_select").removeClass("col-sm-4");
+          $(".imgcolors").addClass("col-sm-6");
+          $('.size_div_single').hide();
+          $('.size_div_multi').hide();
+        }
+        else if(a==1 && a==2)
+        {
+          $('#colrsizechoicediv').show();
+          $('.color_div').show();
+          $('.color_select').show();
+          $(".color_div").removeClass("col-sm-4");
+          $(".color_div").addClass("col-sm-6");
+          $(".imgcolors").removeClass("col-sm-4");
+          $(".color_select").addClass("col-sm-6");
+          $(".color_select").removeClass("col-sm-4");
+          $(".imgcolors").addClass("col-sm-6");
+          $('.size_div_single').hide();
+          $('.size_div_multi').hide();
+        }
+        else if(a==2 && a==3)
+        {
+          $('#colrsizechoicediv').show();
+          $('.color_div').hide();
+          $('.imgcolors').hide();
+          $('.color_select').hide();
+          $('.size_div_single').show();
+          $('.size_div_multi').show();
+          $(".size_div_single").removeClass("col-sm-4");
+          $(".size_div_single").addClass("col-sm-6");
+          $(".size_div_multi").removeClass("col-sm-4");
+          $(".size_div_multi").addClass("col-sm-6");
+
+        }
+
+        else if(a==1 && a==2 && a==3)
+        {
+          $('#colrsizechoicediv').show();
+          $('.color_div').hide();
+          $('.imgcolors').hide();
+          $('.color_select').hide();
+          $('.size_div_single').show();
+          $('.size_div_multi').show();
+          $(".size_div_single").removeClass("col-sm-4");
+          $(".size_div_single").addClass("col-sm-6");
+          $(".size_div_multi").removeClass("col-sm-4");
+          $(".size_div_multi").addClass("col-sm-6");
+
+        }
+        else
+        {
+          $('#colrsizechoicediv').hide();
+        }
+
+
+
+
+     //   });
+    })
+
+
 function nextadd()
    {
 
@@ -789,22 +910,7 @@ function removeblock1(blockid)
 </script>
 
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyD5uA4flbdSg27s9Nuc2s2LeHCy1epurR8",
-    authDomain: "dentaklik.firebaseapp.com",
-    databaseURL: "https://dentaklik.firebaseio.com",
-    projectId: "dentaklik",
-    storageBucket: "dentaklik.appspot.com",
-    messagingSenderId: "641587751147",
-    appId: "1:641587751147:web:d0c21ee06236d7f3c0f6ae",
-    measurementId: "G-TGFW39VNJJ"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
+
 
 <!-- firebase script put it on header of the template -->
 
@@ -832,13 +938,7 @@ function removeblock1(blockid)
 
       });
 
-      function addbox() {
-  if (document.getElementById('mychecked').checked) {
-        document.getElementById('area').style.display = 'block';
-    } else {
-        document.getElementById('area').style.display = 'none';
-    }
-}
+
 
       function coloroptioncheck(idnum)
       {
@@ -1763,9 +1863,9 @@ function removeblock1(blockid)
 
         if(sizecolorchoice==1)
         {
-       // $('#colrsizechoicediv').css('display', 'block');
-
-      //  $('#sizess').show();
+        $('#colrsizechoicediv').css('display', 'block');
+        $('.size_div_single').hide();
+          $('.size_div_multi').hide();
         }
         else if(sizecolorchoice==2)
         {
@@ -1787,53 +1887,6 @@ function removeblock1(blockid)
           $('.color_div').hide();
           $('.imgcolors').hide();
           $('.color_select').hide();
-          $('.size_div_single').show();
-          $('.size_div_multi').show();
-          $(".size_div_single").removeClass("col-sm-4");
-          $(".size_div_single").addClass("col-sm-6");
-          $(".size_div_multi").removeClass("col-sm-4");
-          $(".size_div_multi").addClass("col-sm-6");
-
-        }
-
-        else if(sizecolorchoice==4)
-        {
-          $('#age').show();
-          $('.color_div').hide();
-          $('.imgcolors').hide();
-          $('.color_select').hide();
-          $('.size_div_single').hide();
-          $('.size_div_multi').hide();
-          $('#sizess').hide();
-          $(".size_div_single").removeClass("col-sm-4");
-          $(".size_div_single").addClass("col-sm-6");
-          $(".size_div_multi").removeClass("col-sm-4");
-          $(".size_div_multi").addClass("col-sm-6");
-
-        }
-
-        else if(sizecolorchoice==5)
-        {
-          $('#colrsizechoicediv').show();
-          $('.color_div').hide();
-          $('.imgcolors').hide();
-          $('.color_select').hide();
-          $('.size_div_single').show();
-          $('.size_div_multi').show();
-          $(".size_div_single").removeClass("col-sm-4");
-          $(".size_div_single").addClass("col-sm-6");
-          $(".size_div_multi").removeClass("col-sm-4");
-          $(".size_div_multi").addClass("col-sm-6");
-
-        }
-
-        else if(sizecolorchoice==6)
-        {
-          $('#colrsizechoicediv').show();
-          $('#age').show();
-          $('.color_div').show();
-          $('.imgcolors').show();
-          $('.color_select').show();
           $('.size_div_single').show();
           $('.size_div_multi').show();
           $(".size_div_single").removeClass("col-sm-4");
